@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boom-View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="h-screen max-h-screen max-w-screen w-screen flex bg-[#EBEBEA]">
+      <!-- Right -->
+      <div class="w-1/6 h-full bg-[#1C2324]">
+        <!-- Right Nav -->
+        <div class="">
+          <div class="px-3 py-6 flex bg-[#1C2324] items-center justify-start text-slate-200 gap-3">
+            <img class="w-1/6 h-full p-1 rounded-lg" src="https://imgs.search.brave.com/vt1tEVOZfRTmu3Ms-oUpWWE53IS8lHtrZMgwqEORt38/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ1/NTI1MDc4Mi92ZWN0/b3IvZHJhZ2xpbmUt/ZXhjYXZhdG9yLXBp/eGVsLXBlcmZlY3Qt/Z3JhZGllbnQtbGlu/ZWFyLXZlY3Rvci1p/Y29uLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1BSnNjaHhO/WXdZQVhYRVVwbDda/cXFxSkYwWnU4eS1V/UUJwSWhfd3ZTQ0t3/PQ" alt="">
+            <h1 class="text-xl font-semibold">DashBoard</h1>
+          </div>
+          <!-- User Profile -->
+          <div class="mt-1 mb-7 w-full flex-col flex items-center bg-black gap-2 p-5 justify-center">
+            <!-- Profile Image -->
+            <div class="h-24 w-24 rounded-full overflow-hidden bg-red-500">
+              <img src="https://themelooks.net/demo/dadmin/html/assets/img/avatars/01_80x80.png" class="h-full w-full object-cover object-center" alt="">
+            </div>
+            <h2 class="text-xl text-gray-400 font-semibold">John Doe</h2>
+          </div>
+        </div>
+        <!-- User Functions -->
+        <div class="w-full mb-3 divide-y border-y text-[#959a9b]" >
+          <div class="flex gap-3 items-center justify-start py-3 pl-5 group cursor-pointer hover:bg-slate-700">
+            <img src="/images/icons8-crane-50.png" class="w-1/12" alt="">
+            <p class="group-hover:text-white">Boom View</p>
+          </div>
+          <div class="flex gap-3 items-center justify-start py-3 pl-5 group cursor-pointer hover:bg-slate-700">
+            <img src="/images/icons8-mirror-64.png" class="w-1/12" alt="">
+            <p class="group-hover:text-white">Rear View</p>
+          </div>
+          <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
+            <img src="/images/icons8-analysis-50.png" class="w-1/12" alt="">
+            <p class="group-hover:text-white">Graphical Analysis</p>
+          </div>
+          <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
+            <img src="/images/icons8-performance-50.png" class="w-1/12" alt="">
+            <p class="group-hover:text-white" >Performance Analysis</p>
+          </div>
+          <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
+            <img src="/images/icons8-help-50.png" class="w-1/12" alt="">
+            <p class="group-hover:text-white" >Help</p>
+          </div>
+        </div>
+        <!-- Logout -->
+        <!-- <div class="flex items-center mt-8 justify-center w-full">
+          <button class="px-4 py-1.5 rounded-lg bg-[#DB5F23] text-slate-200">Logout</button>
+        </div> -->
+      </div>
+      <!-- Left -->
+      <div class="w-5/6">
+        <!-- Header Left -->
+        <div class="w-full px-5 py-4 text-[#DB5F23] bg-[#FFFFFF]">
+          <h1 class="text-2xl uppercase">Informations</h1>
+          <h3>Current View</h3>
+        </div>
+        <!-- Change View -->
+        <!-- Main -->
+        <div class="w-full py-4 px-5 h-1/4 flex justify-evenly bg-[#EBEBEA]">
+          <a class="w-3/12 h-full" href="/">
+            <div class="w-full h-full border border-black flex overflow-hidden items-center justify-center rounded-lg bg-[#FFFFFF]">
+            <video autoplay muted id="webcam" class="h-full w-full object-cover" src="https://player.vimeo.com/external/334034343.sd.mp4?s=86f5d7798a820e355dea70d0c50d892298f976af&profile_id=164&oauth2_token_id=57447761"></video>
+          </div>
+        </a>
+        <!-- Radar -->
+        <div class="w-3/12 h-full border border-black flex items-center overflow-hidden justify-center rounded-lg bg-[#FFFFFF]">
+          <video class="h-full w-full object-cover" src=""></video>
+        </div>
+        <!-- Effeceincy -->
+        <a class="w-3/12 h-full" href="/effec">
+          <div class="w-full h-full border border-black flex items-center overflow-hidden justify-center rounded-lg bg-[#FFFFFF]">
+          <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1669833450296-1c9948e72f87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+        </div>
+      </a>
+      </div>
+        <!-- Rear View --> 
+        <div class="w-full bg-[#EBEBEA] h-[63.8%] p-6">
+          <div class="w-full h-full rounded-xl flex items-center justify-center overflow-hidden bg-white">
+            <video autoplay muted id="webcam2" class="h-full w-full object-cover" src="https://player.vimeo.com/external/470966641.sd.mp4?s=36171c70f81c0557546ae127ec8b672c7dab8fd9&profile_id=164&oauth2_token_id=57447761"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/webcam.js"></script>
+  </body>
+</html>
