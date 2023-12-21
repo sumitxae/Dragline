@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+function webCam() {
+  document.addEventListener('DOMContentLoaded', () => {
     navigator.mediaDevices.enumerateDevices()
     .then(devices => {
       const webcamDevices = devices.filter(device => device.kind === 'videoinput')
@@ -14,3 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       )
     })
   });
+}
+
+webCam()

@@ -7,12 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('sih:server');
 var http = require('http');
-
+const socketapi = require('../socketio');
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '4000');
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
@@ -20,26 +20,7 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-// const io = socketio(server);
-
-// const webcam = Webcam.create({
-//   width: 640,
-//   height: 480,
-// });
-
-// async function captureAndSendFrame() {
-//   try {
-//     const image = await webcam.capture();
-//     const buffer = image.getImageBuffer();
-//     io.emit('webcam-frame', buffer);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// setInterval(captureAndSendFrame, 1000 / 30);
-
-
+socketapi.io.attach(server);
 /**
  * Listen on provided port, on all network interfaces.
  */

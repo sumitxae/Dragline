@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="overflow-hidden h-screen w-screen">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="/images/icons8-crane-50.png" alt="Your Company">
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Reports</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dragline 01</h1>
+      <p class="mt-2 truncate text-base leading-5 text-gray-500">Field 13</p>
+    </div>
+  </header>
+
+  <div class="h-[80vh] w-full" >
+    <div class="mx-auto h-full w-full flex  max-w-7xl py-3">
+      <!-- left -->
+        <div class="left -ml-3 h-full w-1/2 border-black mr-3 rounded-xl py-2 pl-2">
+            <div class="img h-5/6 w-full">
+                <video autoplay muted loop class="h-full w-full object-cover" src="/images/drag-vedio.mp4"></video>
+            </div>
+            <h1 class="mt-2 font-bold text-lg text-[#6366F1]">Current Status</h1>
+            <div class="pb-2 px-2 flex gap-8">
+              <div>  
+                <h2 class="font-semibold ">Machine Status: <span class="font-normal curr text-green-700">Digging</span></h2>
+                <h2 class="font-semibold">Target Status: <span class="font-normal target text-red-500">Dig</span></h2>
+            </div>
+            <div>
+                <h2 class="font-semibold">Bucket Filled Percentage(m<sup>3</sup>): <span class="font-normal per text-green-700">56</span>%</h2>  
+                <h2 class="font-semibold cursor-pointer underline"><a href="https://digging-predictor.streamlit.app/" target="_blank">View Algorithm</a></h2>      
+            </div>
+        </div>
+    </div> 
+      <!-- right -->
+        <div class="right ml-3 h-full w-1/2">
+            <div class="drag w-full h-1/2">
+                <video autoplay muted loop class="h-full w-full object-cover" src="/images/360.mp4"></video>
+            </div>
+            <div class="h-1/2 text-sm w-full  py-4">
+                <div class="flex h-1/2 justify-between w-full">
+                    <div class="shift h-full w-[40%] divide-x-2 ">
+                        <div class="flex items-center my-1 gap-3 justify-start pl-2 pr-3 h-1/4 mb-3 w-full" id="shift">
+                          <p class="h-full w-1/3">Shift</p>
+                          <div class="h-full px-2 flex items-center justify-start rounded-lg w-2/3 border-2">24/12/23 6:00AM</div>
+                        </div>
+                        <div class="flex  w-full items-center my-1 gap-3 justify-start pl-2 h-1/4 mb-3 pr-3 " id="position">
+                          <p class="h-full w-1/3">Position</p>
+                          <div class="h-full px-2 flex items-center justify-start rounded-lg w-2/3 border-2">Field 13</div>
+                        </div>
+                        <div class="flex  w-full  items-center my-1 gap-3 justify-start pl-2 pr-3 h-1/4"mb-3  id="operator">
+                          <p class="h-full w-1/3">Operator</p>
+                          <div class="h-full px-2 flex items-center justify-start rounded-lg w-2/3 border-2">All Operators</div>
+                        </div>
+                      </div>
+                      <div class="h-full justify-between text-[14px] w-[60%] py-2 flex ">
+                          <div class=" h-full w-[45%] ml-2">
+                            <h3 class="leading-3 text-lg -ml-2 font-bold text-[#6366F1] mb-2">Statistics</h3>
+                            <span class="flex mt-1 w-full justify-between">
+                                <p>Avg Swing Angle (deg):</p>
+                                <p>140.3</p>
+                              </span>
+                              <span class="flex mt-1 w-full justify-between">
+                                <p>Avg Cycle Time <br> (secs):</p>
+                                <p>72.16</p>
+                              </span>
+                              <span class="flex mt-1 w-full justify-between">
+                                <p>Avg Fill Time (secs):</p>
+                                <p>13.45</p>
+                              </span>
+                        </div>
+                        <div class="h-full w-1/2 pt-4">
+                            <span class="flex mt-1 w-full justify-between px-3">
+                                <p>Avg Fill Length (mtrs):</p>
+                                <p>27.74</p>
+                              </span>
+                              <span class="flex mt-1 w-full justify-between px-3">
+                                <p>Avg Dig Depth (mtrs):</p>
+                                <p>-25.23</p>
+                              </span>
+                              <span class="flex mt-1 w-full justify-between px-3">
+                                <p>Avg Bucket Load (BCMS):</p>
+                                <p>44.42</p>
+                              </span>
+                            </div>
+                        </div>
+                </div>
+                  <div class="h-full mt-3 w-10/12 ">
+                    <div class="h-1/3 w-full py-2 px-4">
+                      <h3 class="leading-3 text-lg font-bold text-[#6366F1] mb-2">Time Usage for Shift</h3>
+                      <div class="flex w-full ml-2 pt-2">
+                        <div>
+                            <p class="font-semibold">Operating</p>
+                            <span class="flex m-1 w-full justify-between px-3">
+                                <p>Cycling</p>
+                                <p>4.43</p>
+                            </span>
+                            <span class="flex m-1 w-full justify-between px-3">
+                                <p>Unproductive Cycling</p>
+                                <p>0.22</p>
+                            </span>
+                          </div>
+                         <div>
+                            <p class="font-semibold">Unscheduled</p>
+                            <span class="flex m-1 w-full justify-between px-3">
+                              <p>Boarding Load Supplies</p>
+                              <p>0.01</p>
+                            </span>
+                            <span class="flex m-1 w-full justify-between px-3">
+                              <p>Safety/Communication</p>
+                              <p>0.23</p>
+                            </span>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+
+<script>
+    let per = document.querySelector(".per")
+    let target = document.querySelector(".target")
+    let curr = document.querySelector(".curr")
+    let inter = setInterval(() => {
+        let prev = per.textContent++;
+        if (prev >= 95){
+            clearInterval(inter);
+            target.textContent = "Carry";
+            setTimeout(() => {
+                curr.textContent = "Carry";
+            }, 800);
+            setTimeout(() => {
+                target.textContent = "Dump";
+            }, 6000);
+            setTimeout(() => {
+                curr.textContent = "Dump"
+            }, 6800);
+        } 
+        else {
+            per.textContent = prev + 5;
+        }
+    }, 900);
+
+</script>
+</body>
+</html>

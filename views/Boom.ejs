@@ -3,7 +3,16 @@
   <head>
     <title>Boom-View</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
+  <style>
+     .radar-chart {
+      position: relative;
+    }
+    .blip {
+      @apply w-2 h-2 bg-red-500 rounded-full absolute;
+    }
+  </style>
   <body>
     <div class="h-screen max-h-screen max-w-screen w-screen flex bg-[#EBEBEA]">
       <!-- Right -->
@@ -27,19 +36,15 @@
         <div class="w-full mb-3 divide-y border-y text-[#959a9b]" >
           <div class="flex gap-3 items-center justify-start py-3 pl-5 group cursor-pointer hover:bg-slate-700">
             <img src="/images/icons8-crane-50.png" class="w-1/12" alt="">
-            <p class="group-hover:text-white">Boom View</p>
+            <p class="group-hover:text-white"><a href="/">Boom View</a></p>
           </div>
           <div class="flex gap-3 items-center justify-start py-3 pl-5 group cursor-pointer hover:bg-slate-700">
             <img src="/images/icons8-mirror-64.png" class="w-1/12" alt="">
-            <p class="group-hover:text-white">Rear View</p>
+            <p class="group-hover:text-white"><a href="/rear">Rear View</a></p>
           </div>
           <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
             <img src="/images/icons8-analysis-50.png" class="w-1/12" alt="">
-            <p class="group-hover:text-white">Graphical Analysis</p>
-          </div>
-          <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
-            <img src="/images/icons8-performance-50.png" class="w-1/12" alt="">
-            <p class="group-hover:text-white" >Performance Analysis</p>
+            <p class="group-hover:text-white"><a href="/guide">Operator Guidance</a></p>
           </div>
           <div class="flex gap-3 items-center group cursor-pointer hover:bg-slate-700 justify-start py-3 pl-5">
             <img src="/images/icons8-help-50.png" class="w-1/12" alt="">
@@ -62,18 +67,18 @@
         <div class="w-full py-4 px-5 h-1/4 flex justify-evenly bg-[#EBEBEA]">
           <a class="w-3/12 h-full" href="/rear">
             <div class="w-full h-full border border-black flex overflow-hidden items-center justify-center rounded-lg bg-[#FFFFFF]">
-            <video id="webcam2" autoplay muted loop class="h-full w-full object-cover" src="https://player.vimeo.com/external/470966641.sd.mp4?s=36171c70f81c0557546ae127ec8b672c7dab8fd9&profile_id=164&oauth2_token_id=57447761"></video>
+            <video id="webcam2" autoplay muted loop class="h-full w-full object-cover" src=""></video>
           </div>
         </a>
         <!-- Radar -->
-        <div class="w-3/12 h-full border border-black flex items-center overflow-hidden justify-center rounded-lg bg-[#FFFFFF]">
-          <video autoplay muted loop class="h-full w-full object-cover" src=""></video>
+        <div id="rdcon" class="w-3/12 h-full border border-black flex items-end justify-start overflow-hidden rounded-lg bg-[#FFFFFF]">
+          <canvas id="radarCanvas" width="600" height="400"></canvas>
         </div>
         <!-- Effeceincy -->
         <a class="w-3/12 h-full" href="/effec">
           <div class="w-full h-full border border-black flex items-center overflow-hidden justify-center rounded-lg bg-[#FFFFFF]">
-          <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1669833450296-1c9948e72f87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
-        </div>
+            <img src="https://imgs.search.brave.com/ilXZI5BRewAgGJ0gwsfhcnJK63jOCMUBCjweoKI7XMI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zN2Qy/LnNjZW5lNy5jb20v/aXMvaW1hZ2UvQ2F0/ZXJwaWxsYXIvQzEw/MzI2Mzc1PyRjYy1n/JCZmbXQ9cGpwZWc" class="h-full w-full object-cover" alt="">
+          </div>
       </a>
       </div>
         <!-- Main View --> 
@@ -87,5 +92,10 @@
       </div>
     </div>
     <script src="/javascripts/webcam.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/radar.js"></script>
+    <script>
+      var socket = io();
+    </script>
   </body>
 </html>
