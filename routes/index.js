@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const mysql = require('mysql2');
+// const mysql = require('mysql2');
 
-const db = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'sumit',
-  password: 'root',
-  database: 'graph',
-});
+// const db = mysql.createConnection({
+//   host: '127.0.0.1',
+//   user: 'sumit',
+//   password: 'root',
+//   database: 'graph',
+// });
 
 // Define a route to fetch sensor data from the database
 router.get('/api/data', (req, res) => {
@@ -17,18 +17,18 @@ router.get('/api/data', (req, res) => {
 });
 
 
-function fetchSensorDataFromDatabase(callback) {
-  const query = 'SELECT * FROM obcycle';
+// function fetchSensorDataFromDatabase(callback) {
+//   const query = 'SELECT * FROM obcycle';
 
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Error executing query: ' + err.stack);
-      callback(null);
-    } else {
-      callback(results); // Send the entire array of results
-    }
-  });
-}
+//   db.query(query, (err, results) => {
+//     if (err) {
+//       console.error('Error executing query: ' + err.stack);
+//       callback(null);
+//     } else {
+//       callback(results); // Send the entire array of results
+//     }
+//   });
+// }
 
 /* GET home page. */
 router.get('/graph', function(req, res, next) {
